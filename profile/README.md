@@ -34,9 +34,6 @@ A step-by-step checklist with every action, who does it and the command to run i
 
 [new text to come]
 
-
-Our repositories are kept private, but an overview of our living systematic reviews will appear here.
-
 ---
 
 📍 Maurice Zeegers | Maastricht University · 🔗 [meta-research.nl](https://github.com/mauricezeegers)· Sister hubs: [MosaROR](https://github.com/MosaROR) · [MosaDBS](https://github.com/MosaDBS)
