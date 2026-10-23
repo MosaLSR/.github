@@ -17,16 +17,16 @@ The pipeline is software with stops. The software searches, deduplicates, derive
 **The steps**
 
 1. **Set up.** A private working repository is made from the template, plus an empty public repository for the release.
-2. **Protocol.** Question (PICO), eligibility criteria, sources, thresholds and roles are written down and released with a DOI before any data enter the repository.
+2. **Protocol.** The question (PICO), eligibility criteria, sources, thresholds, roles and the text of the protocol are written in one form.
 3. **Search strategy.** A seed set of known studies and queries for PubMed, OpenAlex, ClinicalTrials.gov and Europe PMC preprints. An AI assistant can draft a first query per database from the review question; people review and test every query, the strategy is peer reviewed, and then it is frozen.
-4. **Calibration.** Screening is calibrated on the first records; an AI assistant, if used, is measured against the consensus of the people.
-5. **Search and clean.** Backward searches in time windows, then forward searches every month; manual exports from databases such as Embase and PsycINFO; deduplication and retraction checks.
-6. **Screening.** Two reviewers screen independently, first on title and abstract and then on full text; conflicts are settled by discussion.
-7. **Extraction and quality.** Data are extracted and every value is verified by a person, with a second check on a sample. Risk of bias or study quality is assessed with RoB 2 (randomised trials), ROBINS-I (non-randomised studies of interventions) or the Newcastle-Ottawa Scale (cohort and case-control studies).
-8. **Analysis.** Random-effects meta-analysis in R, a PRISMA flow diagram and tables, all derived from the logged decisions.
-9. **Manuscript.** A Quarto manuscript in which the authors write the conclusions; supervisors confirm the conclusion before a release.
-10. **Release.** The version is frozen, rebuilt from the logged decisions to check that it reproduces, published in the public repository and archived on Zenodo with a DOI.
-11. **Keep it living.** New searches run on a schedule. When new studies change the evidence, the conclusion is reviewed before the next release.
+4. **Release of the protocol.** The protocol is released in the public repository and archived on Zenodo with a DOI, which is its registration. Only then do data enter the working repository.
+5. **Search and clean.** Backward searches in time windows for every source, deduplication (exact duplicates automatically, doubtful pairs decided by a person) and retraction checks. Manual exports from databases such as Embase are added if the protocol names them.
+6. **Calibration.** Screening is calibrated on the first records; an AI assistant, if used, is measured against the consensus of the people. A change of model or prompt is an amendment.
+7. **Screening.** Two reviewers screen independently, first on title and abstract and then on full text; conflicts are settled by discussion. A reviewer without access to the repository gets a task pack with a form in one html file and sends back a result file.
+8. **Extraction and quality.** Data are extracted and every value is verified by a person, with a second check on a sample. Risk of bias or study quality is assessed with RoB 2 (randomised trials), ROBINS-I (non-randomised studies of interventions) or the Newcastle-Ottawa Scale (cohort and case-control studies).
+9. **Analysis.** Random-effects meta-analysis in R, a PRISMA flow diagram and tables, all derived from the logged decisions.
+10. **Manuscript and release.** A Quarto manuscript in which the authors write the conclusions. Supervisors confirm the conclusion; the version is frozen, rebuilt from the logged decisions to check that it reproduces, published in the public repository and archived on Zenodo with a DOI.
+11. **Keep it living.** New searches run on a schedule, with a small overlap so that late indexed records are not missed. Only new records are screened. When new studies change the evidence, the conclusion is reviewed before the next release.
 
 A step-by-step checklist with every action, who does it and the command to run is part of the template.
 
