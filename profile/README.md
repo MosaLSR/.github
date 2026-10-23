@@ -8,7 +8,27 @@ We cover both **observational studies** and **randomised controlled trials (RCTs
 
 ## Pipeline
 
-[new text to come]
+Every living review runs on the same open pipeline. The code is free and open source (GPL-3.0-or-later) and is published in the public repository of each review, so anyone can inspect, reuse and rerun it. It only uses free and open tools: Python, R, Quarto, GitHub, Zenodo, OpenAlex, PubMed, ClinicalTrials.gov and Europe PMC.
+
+The pipeline is software with stops. The software searches, deduplicates, derives consensus, runs the analysis and builds the manuscript. Wherever judgement is needed it stops and leaves an open decision for a person. Every decision is logged with who made it and with which tool, so a version of the review can be rebuilt from its logged decisions and the next version starts from the same footing.
+
+**AI assistance is built in and optional.** An AI assistant can screen records as a blinded extra reviewer, propose extracted data and answer risk of bias questions. Everyone uses their own provider and key (local models are possible too), or pastes a prompt into a chat. An assistant only proposes: its answers are stored as model decisions with the model and prompt version, a person verifies every proposed value, and the conclusions and discussion are written by people. Nobody pays for anyone else's AI use.
+
+**The steps**
+
+1. **Set up.** A private working repository is made from the template, plus an empty public repository for the release.
+2. **Protocol.** Question (PICO), eligibility criteria, sources, thresholds and roles are written down and released with a DOI before any data enter the repository.
+3. **Search strategy.** A seed set of known studies, queries for PubMed, OpenAlex, ClinicalTrials.gov and Europe PMC preprints, peer review of the strategy, then freezing it.
+4. **Calibration.** Screening is calibrated on the first records; an AI assistant, if used, is measured against the consensus of the people.
+5. **Search and clean.** Backward searches in time windows, then forward searches every month; manual exports from databases such as Embase and PsycINFO; deduplication and retraction checks.
+6. **Screening.** Two reviewers screen independently, first on title and abstract and then on full text; conflicts are settled by discussion.
+7. **Extraction and quality.** Data are extracted and every value is verified by a person, with a second check on a sample. Risk of bias or study quality is assessed with RoB 2 (randomised trials), ROBINS-I (non-randomised studies of interventions) or the Newcastle-Ottawa Scale (cohort and case-control studies).
+8. **Analysis.** Random-effects meta-analysis in R, a PRISMA flow diagram and tables, all derived from the logged decisions.
+9. **Manuscript.** A Quarto manuscript in which the authors write the conclusions; supervisors confirm the conclusion before a release.
+10. **Release.** The version is frozen, rebuilt from the logged decisions to check that it reproduces, published in the public repository and archived on Zenodo with a DOI.
+11. **Keep it living.** New searches run on a schedule. When new studies change the evidence, the conclusion is reviewed before the next release.
+
+A step-by-step checklist with every action, who does it and the command to run is part of the template.
 
 ## Repositories
 
