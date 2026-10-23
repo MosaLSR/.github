@@ -18,7 +18,7 @@ The pipeline is software with stops. The software searches, deduplicates, derive
 
 1. **Set up.** A private working repository is made from the template, plus an empty public repository for the release.
 2. **Protocol.** Question (PICO), eligibility criteria, sources, thresholds and roles are written down and released with a DOI before any data enter the repository.
-3. **Search strategy.** A seed set of known studies, queries for PubMed, OpenAlex, ClinicalTrials.gov and Europe PMC preprints, peer review of the strategy, then freezing it.
+3. **Search strategy.** A seed set of known studies and queries for PubMed, OpenAlex, ClinicalTrials.gov and Europe PMC preprints. An AI assistant can draft a first query per database from the review question; people review and test every query, the strategy is peer reviewed, and then it is frozen.
 4. **Calibration.** Screening is calibrated on the first records; an AI assistant, if used, is measured against the consensus of the people.
 5. **Search and clean.** Backward searches in time windows, then forward searches every month; manual exports from databases such as Embase and PsycINFO; deduplication and retraction checks.
 6. **Screening.** Two reviewers screen independently, first on title and abstract and then on full text; conflicts are settled by discussion.
