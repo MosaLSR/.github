@@ -8,27 +8,25 @@ We currently cover **observational studies** and **randomised controlled trials*
 
 ## Pipeline
 
-Every living review runs on the same open pipeline. The code is free and open source (GPL-3.0-or-later) and is published in the public repository of each review, so anyone can inspect, reuse and rerun it. It only uses free and open tools: Python, R, Quarto, GitHub, Zenodo, OpenAlex, PubMed, ClinicalTrials.gov and Europe PMC.
+Every living review runs on the same simple, open workflow. The code is free and open source (GPL-3.0-or-later), written in R and Quarto, and published in the public repository of each review, so anyone can inspect, reuse and rerun it. It only uses free and open tools: R, Quarto, GitHub, Zenodo and a shared folder for the reviewers.
 
-The pipeline is software with stops. The software searches, deduplicates, derives consensus, runs the analysis and builds the manuscript. Wherever judgement is needed it stops and leaves an open decision for a person. Every decision is logged with who made it and with which tool, so a version of the review can be rebuilt from its logged decisions and the next version starts from the same footing.
+The first author works in RStudio. The reviewers work outside the repository, in a browser. Searching and screening are done outside the repository too, with the tools the team prefers (for example Covidence); the repository takes over from the included studies.
 
-**AI assistance is built in and optional.** An AI assistant can screen records as a blinded extra reviewer, propose extracted data and answer risk of bias questions. Everyone uses their own provider and key (local models are possible too), or pastes a prompt into a chat. An assistant only proposes: its answers are stored as model decisions with the model and prompt version, a person verifies every proposed value, and the conclusions and discussion are written by people. Nobody pays for anyone else's AI use.
+**The data-analysis sheet is the heart of it.** Together with the protocol, the first author writes a data-analysis sheet: one row per variable that is collected, with its role (determinant, outcome, subgroup, study characteristic, risk of bias, quantitative data). From that sheet the software builds the data extraction forms, the checks on the answers, the first R analysis and the first version of the article.
 
 **The steps**
 
-1. **Set up.** A private working repository is made from the template, plus an empty public repository for the release.
-2. **Protocol.** The question (PICO), eligibility criteria, sources, thresholds, roles and the text of the protocol are written in one form.
-3. **Search strategy.** A seed set of known studies and queries for PubMed, OpenAlex, ClinicalTrials.gov and Europe PMC preprints. An AI assistant can draft a first query per database from the review question; people review and test every query, the strategy is peer reviewed, and then it is frozen.
-4. **Release of the protocol.** The protocol is released in the public repository and archived on Zenodo with a DOI, which is its registration. Only then do data enter the working repository.
-5. **Search and clean.** Backward searches in time windows for every source, deduplication (exact duplicates automatically, doubtful pairs decided by a person) and retraction checks. Manual exports from databases such as Embase are added if the protocol names them.
-6. **Calibration.** Screening is calibrated on the first records; an AI assistant, if used, is measured against the consensus of the people. A change of model or prompt is an amendment.
-7. **Screening.** Two reviewers screen independently, first on title and abstract and then on full text; conflicts are settled by discussion. A reviewer without access to the repository gets a task pack with a form in one html file and sends back a result file.
-8. **Extraction and quality.** Data are extracted and every value is verified by a person, with a second check on a sample. Risk of bias or study quality is assessed with RoB 2 (randomised trials), ROBINS-I (non-randomised studies of interventions) or the Newcastle-Ottawa Scale (cohort and case-control studies).
-9. **Analysis.** Random-effects meta-analysis in R, a PRISMA flow diagram and tables, all derived from the logged decisions.
-10. **Manuscript and release.** A Quarto manuscript in which the authors write the conclusions. Supervisors confirm the conclusion; the version is frozen, rebuilt from the logged decisions to check that it reproduces, published in the public repository and archived on Zenodo with a DOI.
-11. **Keep it living.** New searches run on a schedule, with a small overlap so that late indexed records are not missed. Only new records are screened. When new studies change the evidence, the conclusion is reviewed before the next release.
+1. **Protocol and data-analysis sheet.** The first author writes the protocol (question, eligibility criteria, methods) and fills in the sheet. The protocol is released in the public repository and archived on Zenodo with a DOI.
+2. **Forms.** One html form per included article is built from the sheet. A form is a single file: it needs no account and no installation.
+3. **Extraction.** Reviewers, people or AI models used by the reviewers, fill in the form and put the file they download in the shared folder. There can be several submissions per article.
+4. **Import.** The software copies new submissions into the repository, checks them against the sheet and logs which article, who submitted it (a person or an AI model, with the tool) and when.
+5. **Final data.** Where submissions agree, the value is final. Where they differ, the first author compares them with the article and chooses. Every choice is logged.
+6. **Analysis and article.** The software writes the first R code (random-effects meta-analysis, subgroups, meta-regression, risk of bias) and a concept of the article: the introduction and eligibility criteria come from the protocol, the methods are standard text that follows from the sheet, and the numbers follow the data. The discussion and conclusions are written by the authors. From then on code and text belong to the first author.
+7. **Keep it living.** A new submission is enough: the software imports it and rebuilds the analysis and the numbers in the article. Searching for new articles and screening them are monitored outside the repository. The first author stays responsible for the text and reviews it with every update.
 
-A step-by-step checklist with every action, who does it and the command to run is part of the template.
+**AI assistance is optional and happens outside the repository.** A reviewer may use an AI assistant to fill in a form, and an AI model may also submit a form as a reviewer of its own. Either way the submission says who or what made it and with which model, a person makes every final choice, and no AI runs inside the repository.
+
+A step-by-step guide with a demo is part of the repository.
 
 ## Repositories
 
