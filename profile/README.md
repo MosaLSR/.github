@@ -16,21 +16,21 @@ The first author works in RStudio. The reviewers work outside the repository, in
 
 **The steps**
 
-1. **Protocol and SAP sheet.** The first author writes the protocol in an editor that follows PRISMA-P and fills in the SAP sheet. The editor makes the protocol as a pdf, which is deposited on Zenodo: its DOI is the registration.
-2. **Form.** One html form for every article is built from the sheet. The form is a single file: it needs no account and no installation, and the software does not need to know the articles beforehand.
-3. **Extraction.** Reviewers, people or AI models used by the reviewers, say which article it is (by its DOI), fill in what it reports and put the file they download in the shared folder. There can be several submissions per article.
-4. **Import.** No articles are imported, only submissions. The software copies new submissions into the repository, checks them against the sheet and logs which article, who submitted it (a person or an AI model, with the tool) and when.
+1. **Protocol and SAP sheet.** The first author writes the protocol in an editor that follows PRISMA-P and fills in the SAP sheet. The editor renders the protocol as a pdf, which is deposited on Zenodo: its DOI is the registration.
+2. **Form.** One html form for every article is built from the SAP sheet. The form is a single file: it needs no account and no installation, and the software does not need to know the articles beforehand.
+3. **Extraction.** Reviewers say which article it is (by its DOI), fill in what it reports and put the file they download in the shared folder. There can be several submissions per article.
+4. **Import.** No articles are imported, only submissions. The software copies new submissions into the repository, checks them against the sheet and logs which article, who submitted it (a person or an AI model) and when.
 5. **Final data.** Where submissions agree, the value is final. Where they differ, the first author compares them with the article and chooses. Every choice is logged.
-6. **Analysis and article.** The software writes the first R code (random-effects meta-analysis, subgroups, meta-regression, risk of bias) and a concept of the article in Quarto, with the analysis in it: the introduction and eligibility criteria come from the protocol, the methods are standard text that follows from the sheet, and the numbers follow the data. The discussion and conclusions are written by the authors. From then on code and text belong to the first author.
+6. **Analysis and article.** The software writes the first R code (random-effects meta-analysis, subgroups, meta-regression, risk of bias) and a concept of the article in Quarto, with the analysis in it: the introduction and eligibility criteria come from the Protocol, the methods are standard text that follows from the SAP sheet, and the numbers follow the data. The discussion and conclusions are written by the authors. From then on code and text belong to the first author.
 7. **Keep it living.** A new submission is enough: the software imports it and rebuilds the analysis and the numbers in the article. Searching for new articles and screening them are monitored outside the repository. The first author stays responsible for the text and reviews it with every update.
 
-**AI assistance is optional and happens outside the repository.** A reviewer may use an AI assistant to fill in a form, and an AI model may also submit a form as a reviewer of its own. Either way the submission says who or what made it and with which model, a person makes every final choice, and no AI runs inside the repository.
+**AI assistance is optional and happens outside the repository.** A reviewer may use an AI assistant to fill in a form, and an AI model may also submit a form as a reviewer on its own. Either way the submission says who or what made it and with which model, a person makes every final choice, and no AI runs inside the repository. This keep the LSR entirely code-based and therefore entirely reproducible. 
 
 A step-by-step guide, a demo with synthetic data and the instructions for reviewers are part of the repository. A new first author goes through the demo first and then replaces it step by step with their own review.
 
 ## Repositories
 
-* **LSR**: the template from which every living review starts (private for now).
+* **LSR**: the template from which every living review starts.
 * **LSR-<slug>-work**: the private working repository of one review, where the first author works.
 * The finished review is released in a public repository with its code and data, archived on Zenodo with a DOI.
 
