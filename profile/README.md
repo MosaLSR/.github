@@ -2,7 +2,7 @@ MosaLSR (Maastricht Living Systematic Reviews) is a hub at Maastricht University
 
 ## Our approach
 
-Conventional systematic reviews are out of date soon after publication. A living systematic review keeps searching, screening, and synthesising the literature at regular intervals, so the evidence summary stays current. MosaLSR builds reproducible, code-based pipelines for this: searches, data extraction, and meta-analyses live in version-controlled repositories, so every update can be traced and rerun.
+Conventional systematic reviews are out of date soon after publication. A living systematic review keeps searching, screening, and synthesising the literature at regular intervals, so the evidence summary stays current. MosaLSR builds a reproducible, code-based workflow for this: data extraction and meta-analyses live in version-controlled repositories, so every update can be traced and rerun.
 
 We currently cover **observational studies** and **randomised controlled trials**.
 
