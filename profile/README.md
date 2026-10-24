@@ -10,13 +10,13 @@ We currently cover **observational studies** and **randomised controlled trials*
 
 Every living review runs on the same simple, open workflow. The code is free and open source (GPL-3.0-or-later), written in R and Quarto, and published in the public repository of each review, so anyone can inspect, reuse and rerun it. It only uses free and open tools: R, Quarto, GitHub, Zenodo and a shared folder for the reviewers.
 
-The first author works in RStudio. The reviewers work outside the repository, in a browser. Searching and screening are done outside the repository too, with the tools the team prefers (for example Covidence); the repository takes over from the included studies.
+The first author works in RStudio. The reviewers work outside the repository, in a browser. Searching and screening are done outside the repository too, with the tools the team prefers. The repository takes over from the included studies.
 
-**The data-analysis sheet is the heart of it.** Together with the protocol, the first author writes a data-analysis sheet: one row per variable that is collected, with its role (determinant, outcome, subgroup, study characteristic, risk of bias, quantitative data). From that sheet the software builds the data extraction forms, the checks on the answers, the first R analysis and the first version of the article.
+**The "Protocol and SAP sheet" is the heart of it.** Together with the protocol, the first author writes a data-analysis sheet: one row per variable that is collected, with its role (determinant, outcome, subgroup, study characteristic, risk of bias, quantitative data). From that sheet the software builds the data extraction forms, the checks on the answers, the first R analysis and the first version of the article.
 
 **The steps**
 
-1. **Protocol and data-analysis sheet.** The first author writes the protocol in an editor that follows PRISMA-P (question, eligibility criteria, methods; what follows from the sheet is written by the software) and fills in the sheet. The editor makes the protocol as a pdf, which is deposited on Zenodo: its DOI is the registration.
+1. **Protocol and SAP sheet.** The first author writes the protocol in an editor that follows PRISMA-P and fills in the SAP sheet. The editor makes the protocol as a pdf, which is deposited on Zenodo: its DOI is the registration.
 2. **Form.** One html form for every article is built from the sheet. The form is a single file: it needs no account and no installation, and the software does not need to know the articles beforehand.
 3. **Extraction.** Reviewers, people or AI models used by the reviewers, say which article it is (by its DOI), fill in what it reports and put the file they download in the shared folder. There can be several submissions per article.
 4. **Import.** No articles are imported, only submissions. The software copies new submissions into the repository, checks them against the sheet and logs which article, who submitted it (a person or an AI model, with the tool) and when.
